@@ -45,7 +45,7 @@ export default function Sidebar({ onCompose, activeFolder }: SidebarProps) {
       <div className="p-4 border-t border-gray-200">
         <div className="flex items-center gap-2 text-xs text-gray-500">
           <Mail size={14} />
-          Gmail Simulator
+          Affinity Finance Support
         </div>
       </div>
     </div>

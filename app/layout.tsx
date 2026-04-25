@@ -3,8 +3,8 @@ import './globals.css';
 import 'react-quill-new/dist/quill.snow.css';
 
 export const metadata: Metadata = {
-  title: 'Gmail Simulator',
-  description: 'Internal email simulator',
+  title: 'Affinity Finance Communications',
+  description: 'Finance Support Communications',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, FormEvent } from 'react';
-import { Mail } from 'lucide-react';
 import { login } from '@/lib/api';
 
 interface LoginProps {
@@ -36,9 +35,9 @@ export default function Login({ onSuccess }: LoginProps) {
         className="w-full max-w-sm bg-white border border-gray-200 rounded-2xl shadow-sm p-8"
       >
         <div className="flex flex-col items-center mb-6">
-          <Mail size={36} className="text-blue-600 mb-2" />
+          <img src="/img/square_logo.png" alt="Affinity Finance" className="w-12 h-12 rounded-lg object-cover mb-2" />
           <h1 className="text-xl font-medium text-gray-800">Sign in</h1>
-          <p className="text-sm text-gray-500 mt-1">Gmail Simulator</p>
+          <p className="text-sm text-gray-500 mt-1">Affinity Finance Support</p>
         </div>
 
         <label className="block text-xs font-medium text-gray-600 mb-1">Username</label>

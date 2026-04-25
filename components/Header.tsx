@@ -23,8 +23,8 @@ export default function Header({ onSearch, onToggleSidebar }: HeaderProps) {
       </button>
 
       <div className="flex items-center gap-2 mr-6">
-        <div className="w-8 h-8 bg-gradient-to-br from-blue-500 via-red-500 to-yellow-500 rounded-lg" />
-        <span className="text-xl text-gray-700 font-normal">Gmail</span>
+        <img src="/img/square_logo.png" alt="Affinity Finance" className="w-8 h-8 rounded-lg object-cover" />
+        <span className="text-xl text-gray-700 font-normal">Affinity Finance</span>
       </div>
 
       <form onSubmit={handleSubmit} className="flex-1 max-w-2xl">

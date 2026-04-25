@@ -33,10 +33,13 @@ function buildHtml(emails: Email[]): string {
 
   return `
     <div style="font-family:'Google Sans',Arial,sans-serif;background:#f6f8fc;padding:24px;width:680px;box-sizing:border-box;">
-      <h1 style="font-size:22px;font-weight:400;color:#202124;margin:0 0 24px;padding-bottom:12px;border-bottom:1px solid #e0e0e0;">${escape(subject)}</h1>
+      <div style="display:flex;align-items:center;gap:12px;margin:0 0 24px;padding-bottom:12px;border-bottom:1px solid #e0e0e0;">
+        <img src="${window.location.origin}/img/square_logo.png" alt="Affinity Finance" style="width:40px;height:40px;border-radius:6px;object-fit:cover;" crossorigin="anonymous" />
+        <h1 style="font-size:22px;font-weight:400;color:#202124;margin:0;flex:1;">${escape(subject)}</h1>
+      </div>
       ${messages}
       <div style="text-align:center;color:#5f6368;font-size:11px;margin-top:24px;padding-top:12px;border-top:1px solid #e0e0e0;">
-        Exported from Gmail Simulator &bull; ${new Date().toLocaleDateString()}
+        Exported from Affinity Finance Communications &bull; ${new Date().toLocaleDateString()}
       </div>
     </div>
   `;
@@ -57,6 +60,18 @@ export async function exportThreadPDF(emails: Email[], filename: string): Promis
   document.body.appendChild(container);
 
   try {
+    await Promise.all(
+      Array.from(container.querySelectorAll('img')).map(
+        (img) =>
+          img.complete
+            ? Promise.resolve()
+            : new Promise<void>((resolve) => {
+                img.onload = () => resolve();
+                img.onerror = () => resolve();
+              })
+      )
+    );
+
     const canvas = await html2canvas(container.firstElementChild as HTMLElement, {
       scale: 2,
       backgroundColor: '#f6f8fc',
