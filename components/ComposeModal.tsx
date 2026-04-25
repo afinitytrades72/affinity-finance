@@ -45,7 +45,7 @@ export default function ComposeModal({ onSend, onClose }: ComposeModalProps) {
       bcc: parseRecipients(bccInput),
       subject,
       body,
-      timestamp: timestamp || undefined,
+      timestamp: timestamp ? new Date(timestamp).toISOString() : undefined,
     });
     onClose();
   };
@@ -132,7 +132,7 @@ export default function ComposeModal({ onSend, onClose }: ComposeModalProps) {
               <label className="text-xs text-gray-500 block mb-1">Custom timestamp</label>
               <input
                 type="datetime-local" value={timestamp}
-                onChange={(e) => setTimestamp(e.target.value ? new Date(e.target.value).toISOString() : '')}
+                onChange={(e) => setTimestamp(e.target.value)}
                 className="w-full px-2 py-1 border border-gray-300 rounded text-sm outline-none focus:border-blue-500"
               />
             </div>

@@ -38,7 +38,7 @@ export default function ReplyForm({ replyTo, replyAll, threadId, subject, onSend
       cc: replyAll ? (replyTo.ccRecipients || []) : [],
       subject: subject.startsWith('Re: ') ? subject : `Re: ${subject}`,
       body,
-      timestamp: timestamp || undefined,
+      timestamp: timestamp ? new Date(timestamp).toISOString() : undefined,
       threadId,
       parentId: replyTo.id,
     });
@@ -79,8 +79,8 @@ export default function ReplyForm({ replyTo, replyAll, threadId, subject, onSend
           {showTimestamp && (
             <input
               type="datetime-local"
-              value={timestamp ? new Date(timestamp).toISOString().slice(0, 16) : ''}
-              onChange={(e) => setTimestamp(e.target.value ? new Date(e.target.value).toISOString() : '')}
+              value={timestamp}
+              onChange={(e) => setTimestamp(e.target.value)}
               className="mt-1 w-full px-3 py-1.5 border border-gray-300 rounded-lg text-sm outline-none focus:border-blue-500"
             />
           )}
