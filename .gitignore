@@ -1,4 +1,22 @@
 node_modules/
+.next/
+out/
+build/
 dist/
-server/emails.db
+*.log
+.DS_Store
+
+# env
 .env
+.env.local
+.env*.local
+
+# legacy
+client/dist/
+server/emails.db
+server/emails.db-shm
+server/emails.db-wal
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts

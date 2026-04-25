@@ -1,53 +1,70 @@
 # Gmail Simulator
 
-A full-stack web application that simulates a Gmail-like email interface for creating and exporting dummy email conversations.
+Next.js + Supabase app that simulates a Gmail-like email interface for creating and exporting dummy email conversations. Single-tenant, gated by Basic Auth.
 
 ## Features
 
 - **Gmail-like UI** — Sidebar, email list, threaded conversation view
 - **Compose emails** — Rich text editor with From, To, CC/BCC, custom timestamps
 - **Email threading** — Reply / Reply All with proper parent-child relationships
-- **Search** — Search emails by subject, sender, or body content
-- **Export to PDF** — Professional-looking PDF export via Puppeteer
-- **Import/Export JSON** — Portable email thread format
-- **Seed data** — 3 sample threaded conversations included
+- **Search** — Case-insensitive search by subject, sender, or body
+- **Export to PDF** — Client-side jsPDF + html2canvas (no server-side Chromium)
+- **Import/Export JSON** — Portable thread format
+- **Auth** — HTTP Basic Auth (single admin user) gating all `/api/*` routes
 
 ## Tech Stack
 
-- **Frontend:** React + Vite + Tailwind CSS v4
-- **Backend:** Node.js + Express
-- **Database:** SQLite (via better-sqlite3)
-- **PDF:** Puppeteer
-- **Rich Text:** React Quill
+- **Framework:** Next.js 16 (App Router) + TypeScript
+- **UI:** React 19 + Tailwind CSS v4 + Quill
+- **Database:** Supabase Postgres (`pg` driver, Transaction-mode pooler)
+- **Auth:** Basic Auth via `proxy.ts`
+- **PDF:** Client-side (`jspdf` + `html2canvas`)
 
 ## Setup
 
-```bash
-# Install all dependencies
-npm install
-cd client && npm install
-cd ..
+1. **Install deps**
+   ```bash
+   npm install
+   ```
 
-# Development (runs both server and client)
-npm run dev
+2. **Create a Supabase project**, then in the SQL editor run:
+   - `supabase/schema.sql` — creates the `emails` table and indexes
+   - `supabase/seed.sql` — optional, inserts the three sample threads
 
-# Production build
-npm start
-```
+3. **Get the Transaction-mode pooler URL** from Supabase (Project Settings → Database → Connection Pooling → Mode: Transaction). Port should be `6543`.
 
-- **Dev mode:** Frontend at `http://localhost:5173`, API at `http://localhost:3001`
-- **Production:** Everything served from `http://localhost:3001`
+4. **Create `.env.local`** (see `.env.example`):
+   ```
+   DATABASE_URL=postgresql://...:6543/postgres
+   AUTH_USER=administrator
+   AUTH_PASS=<your-strong-password>
+   ```
+
+5. **Run dev server**
+   ```bash
+   npm run dev
+   ```
+   Visit http://localhost:3000.
+
+## Deploy to Vercel
+
+1. Push to GitHub.
+2. Import the repo in Vercel — it auto-detects Next.js.
+3. Set env vars in the Vercel dashboard: `DATABASE_URL`, `AUTH_USER`, `AUTH_PASS`.
+4. Deploy. No `vercel.json` needed.
 
 ## API Endpoints
 
+All `/api/*` routes require Basic Auth.
+
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| GET | `/api/threads` | List all threads (inbox view) |
+| GET | `/api/auth/check` | Verify credentials |
+| GET | `/api/threads` | List threads (inbox view) |
 | GET | `/api/threads/:id` | Get all emails in a thread |
-| POST | `/api/emails` | Create new email or reply |
 | DELETE | `/api/threads/:id` | Delete a thread |
+| POST | `/api/emails` | Create new email or reply |
 | GET | `/api/search?q=term` | Search emails |
-| GET | `/api/threads/:id/pdf` | Export thread as PDF |
 | GET | `/api/threads/:id/export` | Export thread as JSON |
 | POST | `/api/threads/import` | Import thread from JSON |
 
@@ -66,11 +83,3 @@ POST /api/emails
   "parentId": "optional-parent-message-id"
 }
 ```
-
-## Sample Data
-
-The app seeds 3 demo threads on first run:
-
-1. **Project Aurora - Kickoff Meeting** — 3-message thread about project planning
-2. **[URGENT] Production API - 500 errors** — 3-message incident response thread
-3. **New Dashboard Mockups - Q2 Redesign** — Single email with rich HTML formatting
