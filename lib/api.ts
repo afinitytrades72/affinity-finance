@@ -69,9 +69,14 @@ export async function createEmail(data: NewEmailInput): Promise<Email> {
   return res.json();
 }
 
-export async function deleteThread(threadId: string) {
-  const res = await request(`/threads/${threadId}`, { method: 'DELETE' });
-  return res.json();
+export async function deleteThread(threadId: string, password: string) {
+  const res = await request(`/threads/${threadId}`, {
+    method: 'DELETE',
+    headers: { 'X-Delete-Password': password },
+  });
+  const body = await res.json();
+  if (!res.ok) throw new Error(body.error || 'Delete failed');
+  return body;
 }
 
 export async function searchEmails(query: string): Promise<Email[]> {

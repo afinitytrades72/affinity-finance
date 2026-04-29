@@ -67,9 +67,15 @@ export default function Page() {
   };
 
   const handleDelete = async (threadId: string) => {
-    await deleteThread(threadId);
-    if (selectedThreadId === threadId) handleBack();
-    else loadThreads();
+    const password = window.prompt('Enter delete password:');
+    if (!password) return;
+    try {
+      await deleteThread(threadId, password);
+      if (selectedThreadId === threadId) handleBack();
+      else loadThreads();
+    } catch (err) {
+      alert((err as Error).message || 'Delete failed');
+    }
   };
 
   const handleImportJSON = () => {

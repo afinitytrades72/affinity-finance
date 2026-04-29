@@ -14,8 +14,16 @@ export async function GET(_req: Request, ctx: { params: Promise<{ threadId: stri
   }
 }
 
-export async function DELETE(_req: Request, ctx: { params: Promise<{ threadId: string }> }) {
+export async function DELETE(req: Request, ctx: { params: Promise<{ threadId: string }> }) {
   try {
+    const expected = process.env.DELETE_PASSWORD;
+    if (!expected) {
+      return NextResponse.json({ error: 'Delete is disabled (DELETE_PASSWORD not set)' }, { status: 403 });
+    }
+    const provided = req.headers.get('x-delete-password');
+    if (provided !== expected) {
+      return NextResponse.json({ error: 'Invalid delete password' }, { status: 403 });
+    }
     const { threadId } = await ctx.params;
     await deleteThread(threadId);
     return NextResponse.json({ success: true });
