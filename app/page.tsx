@@ -10,10 +10,9 @@ import ComposeModal from '@/components/ComposeModal';
 import Login from '@/components/Login';
 import {
   fetchThreads, fetchThread, createEmail, deleteThread,
-  exportThreadJSON, importThreadJSON, searchEmails,
+  importThreadJSON, searchEmails,
   getStoredAuth, clearAuth, setUnauthorizedHandler,
 } from '@/lib/api';
-import { exportThreadPDF } from '@/lib/pdf';
 import type { Email, ThreadSummary, NewEmailInput } from '@/lib/types';
 
 export default function Page() {
@@ -71,23 +70,6 @@ export default function Page() {
     await deleteThread(threadId);
     if (selectedThreadId === threadId) handleBack();
     else loadThreads();
-  };
-
-  const handleExportPDF = async () => {
-    if (!selectedThreadId || !threadEmails.length) return;
-    await exportThreadPDF(threadEmails, `thread-${selectedThreadId}.pdf`);
-  };
-
-  const handleExportJSON = async () => {
-    if (!selectedThreadId) return;
-    const data = await exportThreadJSON(selectedThreadId);
-    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `thread-${selectedThreadId}.json`;
-    a.click();
-    URL.revokeObjectURL(url);
   };
 
   const handleImportJSON = () => {
@@ -148,8 +130,6 @@ export default function Page() {
                 emails={threadEmails}
                 onBack={handleBack}
                 onReply={handleReply}
-                onExportPDF={handleExportPDF}
-                onExportJSON={handleExportJSON}
               />
             )
           ) : (

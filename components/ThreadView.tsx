@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { format } from 'date-fns';
-import { ArrowLeft, Reply, ReplyAll, FileDown, Download, ChevronDown, ChevronUp } from 'lucide-react';
+import { ArrowLeft, Reply, ReplyAll, ChevronDown, ChevronUp } from 'lucide-react';
 import DOMPurify from 'dompurify';
 import ReplyForm from './ReplyForm';
 import type { Email, NewEmailInput } from '@/lib/types';
@@ -91,11 +91,9 @@ interface ThreadViewProps {
   emails: Email[];
   onBack: () => void;
   onReply: (data: NewEmailInput) => void;
-  onExportPDF: () => void;
-  onExportJSON: () => void;
 }
 
-export default function ThreadView({ emails, onBack, onReply, onExportPDF, onExportJSON }: ThreadViewProps) {
+export default function ThreadView({ emails, onBack, onReply }: ThreadViewProps) {
   const [replyTo, setReplyTo] = useState<Email | null>(null);
   const [replyAll, setReplyAll] = useState(false);
   const subject = emails[0]?.subject || 'Thread';
@@ -110,20 +108,6 @@ export default function ThreadView({ emails, onBack, onReply, onExportPDF, onExp
           <ArrowLeft size={20} className="text-gray-600" />
         </button>
         <h2 className="text-lg font-normal text-gray-800 flex-1 truncate">{subject}</h2>
-        <div className="flex gap-1">
-          <button
-            onClick={onExportPDF}
-            className="flex items-center gap-1.5 px-3 py-1.5 bg-[#1a73e8] text-white rounded-lg text-sm hover:bg-[#1557b0] transition-colors"
-          >
-            <FileDown size={16} /> Export PDF
-          </button>
-          <button
-            onClick={onExportJSON}
-            className="flex items-center gap-1.5 px-3 py-1.5 border border-gray-300 rounded-lg text-sm text-gray-700 hover:bg-gray-50 transition-colors"
-          >
-            <Download size={16} /> JSON
-          </button>
-        </div>
       </div>
 
       <div id="thread-print-root" className="flex-1 overflow-y-auto p-4">

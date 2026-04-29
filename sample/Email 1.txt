@@ -1,0 +1,311 @@
+Email 1
+
+Date: Jan 25, 2026 | 10:15 IST
+From: Karan
+To: Eldridge
+Subject: Request for Assistance – Crypto Fund Transfer
+
+Dear Eldridge,
+
+I am reaching out regarding the transfer of 9,512,195 USDT (equivalent to ₹78 crore INR @ 82) held with our Origin Custodian, which we intend to move to Destination Custodian.
+
+Kindly guide us on the required documentation and process to initiate this transfer securely.
+
+Best regards,
+Karan
+
+Email 2
+
+Date: Jan 25, 2026 | 13:15 IST
+From: Eldridge
+To: Karan
+Subject: Re: Request for Assistance – Crypto Fund Transfer
+
+Dear Karan,
+
+Thank you for your email.
+
+This transfer will involve:
+
+Custodian ownership verification
+Blockchain reconciliation
+AML/KYC compliance checks
+Liquidity confirmation at Destination Custodian
+
+We will initiate the process and keep you updated.
+
+Kind regards,
+Eldridge
+
+Email 3 
+
+Date: Jan 28, 2026 | 11:05 IST
+From: Karan
+To: Eldridge
+Subject: Follow-Up – Transfer Initiation
+
+Dear Eldridge,
+
+I hope you are doing well.
+
+I wanted to follow up regarding the transfer initiation. Considering the time sensitivity of this transaction and the commitments associated with it, I would appreciate if you could confirm whether any documentation or approvals are pending from our side.
+
+Your guidance will help us ensure there are no delays from our end.
+
+Best regards,
+Karan
+
+Email 4
+
+Date: Jan 30, 2026 | 14:30 IST
+From: Eldridge
+To: Karan
+Subject: Update – Transfer Processing
+
+Dear Karan,
+
+During initial processing, we note:
+
+Multi-signature authorization required due to transaction size
+Asset distribution across multiple wallet addresses
+Enhanced liquidity verification
+
+These factors may extend the timeline.
+
+Funds remain securely held within custodial systems.
+
+Kind regards,
+Eldridge
+
+Email 5 
+
+Date: Feb 3, 2026 | 10:40 IST
+From: Karan
+To: Eldridge
+Subject: Status Check – Transfer Processing
+
+Dear Eldridge,
+
+Thank you for your previous update.
+
+Given the importance of this transaction and the expectations tied to it, I would request a status update on custodial approvals and blockchain reconciliation.
+
+We are closely monitoring timelines and would like to ensure everything is progressing as expected.
+
+Best regards,
+Karan
+
+Email 6
+
+Date: Feb 12, 2026 | 15:20 IST
+From: Eldridge
+To: Karan
+Subject: Settlement Status – MT103 Reference Update
+
+Dear Karan,
+
+The transaction has entered an in-flight settlement state.
+
+MT103 Reference ID: MT103-8X9-PLX-7714
+Funds debited from Origin Custodian
+Pending reconciliation before credit
+
+In such cases, funds are:
+
+In settlement
+In transit
+Pending confirmation
+
+Funds remain fully secure within settlement infrastructure.
+
+Kind regards,
+Eldridge
+
+Email 7
+
+Date: Feb 14, 2026 | 11:25 IST
+From: Karan
+To: Eldridge
+Subject: Clarification – Settlement Status
+
+Dear Eldridge,
+
+Thank you for the detailed explanation.
+
+Considering the ongoing settlement status and its time sensitivity, I would appreciate confirmation if any action or documentation from our side can help facilitate faster reconciliation against the MT103 reference.
+
+We remain fully aligned to support this process at every stage.
+
+Best regards,
+Karan
+
+Email 8
+
+Date: Feb 20, 2026 | 16:45 IST
+From: Eldridge
+To: Karan
+Subject: Progress Update
+
+Dear Karan,
+
+Custodian verification completed
+Liquidity acceptance confirmed
+Blockchain reconciliation ongoing
+
+No discrepancies detected.
+
+Funds remain fully secure.
+
+Kind regards,
+Eldridge
+
+Email 9
+
+Date: Feb 24, 2026 | 10:55 IST
+From: Karan
+To: Eldridge
+Subject: Follow-Up – Reconciliation Progress
+
+Dear Eldridge,
+
+I hope all is well.
+
+As we continue to track the progress of this transaction, I would appreciate an update on the reconciliation stage. The timeline remains important from our end, and we are keen to ensure everything is proceeding without any unforeseen delays.
+
+Thank you for your continued support.
+
+Best regards,
+Karan
+
+Email 10
+
+Date: Mar 10, 2026 | 15:15 IST
+From: Eldridge
+To: Karan
+Subject: Settlement Progress
+
+Dear Karan,
+
+Blockchain reconciliation is progressing.
+All compliance approvals are completed.
+
+Funds remain secure in the settlement layer.
+
+Kind regards,
+Eldridge
+
+Email 11
+
+Date: Mar 13, 2026 | 11:10 IST
+From: Karan
+To: Eldridge
+Subject: Confirmation – Settlement Readiness
+
+Dear Eldridge,
+
+Thank you for your update.
+
+As we move closer to final settlement, I would request confirmation that all custodial approvals and compliance requirements are fully completed. Timely execution at this stage is critical, and we want to ensure full readiness from all sides.
+
+Best regards,
+Karan
+
+Email 12
+
+Date: Apr 2, 2026 | 14:30 IST
+From: Eldridge
+To: Karan
+Subject: Transfer Initiation Confirmation
+
+Dear Karan,
+
+The inter-custodian settlement process has been initiated.
+
+Blockchain confirmations underway
+MT103 validation ongoing
+
+Funds remain secure.
+
+Kind regards,
+Eldridge
+
+Email 13 
+
+Date: Apr 5, 2026 | 10:35 IST
+From: Karan
+To: Eldridge
+Subject: Post-Initiation Status Check
+
+Dear Eldridge,
+
+Following the initiation of the transfer, I would appreciate confirmation that blockchain confirmations and settlement processes are progressing smoothly.
+
+Given the significance of the timeline, we are closely monitoring progress and would value any update you can provide.
+
+Best regards,
+Karan
+
+Email 14
+
+Date: Apr 15, 2026 | 15:40 IST
+From: Eldridge
+To: Karan
+Subject: Ongoing Settlement Confirmation
+
+Dear Karan,
+
+Transaction remains under final reconciliation.
+
+MT103 reference active
+No discrepancies
+
+Funds remain fully secure.
+
+Kind regards,
+Eldridge
+
+Email 15
+
+Date: Apr 18, 2026 | 11:00 IST
+From: Karan
+To: Eldridge
+Subject: Final Timeline Confirmation
+
+Dear Eldridge,
+
+Thank you for your continued updates throughout this process.
+
+As we approach the final stages of settlement, I would request a clear confirmation on the expected timeline for final credit. This transaction is time-sensitive, and we are mindful of the patience and expectations associated with it.
+
+Your confirmation will help us plan accordingly and maintain alignment on timelines.
+
+Best regards,
+Karan
+
+Email 16 (FINAL)
+
+Date: Apr 22, 2026 | 16:10 IST
+From: Eldridge
+To: Karan
+Subject: Final Timeline Confirmation – Fund Credit
+
+Dear Karan,
+
+We would like to provide a final update regarding the transaction:
+
+The transfer remains in the settlement / in-transit stage linked to
+MT103 Reference ID: MT103-8X9-PLX-7714
+All compliance, custodial, and liquidity checks have been successfully completed
+No discrepancies or risks have been identified
+Expected Timeline:
+
+The funds are expected to be credited to the Destination Custodian account by end of June 2026 or during July 2026, subject to final settlement confirmation cycles.
+
+Please be assured:
+
+Funds are fully secure
+Transaction is actively progressing
+Delay is purely procedural and technical
+
+Kind regards,
+Eldridge
